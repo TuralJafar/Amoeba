@@ -26,7 +26,7 @@ namespace amoboe.Controllers
         [HttpPost]
         public async Task<IActionResult>Register(RegisterVM registerVM)
         {
-            if(registerVM == null) return View();
+            //if(registerVM == null) return View();
             AppUser user = new AppUser()
             {
                 Name=registerVM.Name,
@@ -55,7 +55,7 @@ namespace amoboe.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult>Register(LoginVM loginVM)
+        public async Task<IActionResult>Login(LoginVM loginVM)
         {
             if(loginVM == null) return View();
             AppUser appUser = await _userManager.FindByEmailAsync(loginVM.UsernameOrEmail);

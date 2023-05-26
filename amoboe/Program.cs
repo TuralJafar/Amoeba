@@ -19,7 +19,7 @@ namespace amoboe
             });
             builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
             {
-                //options.Password.RequiredUniqueChars = 1;
+                options.Password.RequiredUniqueChars = 1;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = true;
                 options.Password.RequireLowercase = true;

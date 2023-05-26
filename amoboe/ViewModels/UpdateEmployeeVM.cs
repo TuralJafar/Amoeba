@@ -1,4 +1,4 @@
-﻿namespace amoboe.ViewModels.Account
+﻿namespace amoboe.ViewModels
 {
     public class UpdateEmployeeVM
     {
