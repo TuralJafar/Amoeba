@@ -1,30 +1,33 @@
-﻿@using amoboe.ViewModels
-@model CreateEmployeeVM
+﻿
+@using amoboe.ViewModels;
+@using amoboe.ViewModels.Account;
+@model UpdateEmployeeVM
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Create Employee</h4>
+            <h4 class="card-title">Update Employee</h4>
             <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
+                    <img src="~/assets/img/team/@Model.Image" />
                     <label asp-for="Photo">Photo</label>
                     <input asp-for="Photo" placeholder="Photo">
                     <span asp-validation-for="Photo"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Photo">Name</label>
-                    <input asp-for="Name" placeholder="Name">
+                    <input asp-for="Name" placeholder="Name" value="@Model.Name">
                     <span asp-validation-for="Name"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Description">Description</label>
-                    <input asp-for="Description" placeholder="Description">
+                    <input asp-for="Description" placeholder="Description" value="@Model.Description">
                     <span asp-validation-for="Description"></span>
                 </div>
                 <div class="form-group">
-                    <select asp-for="TeamId">
-                        @foreach (Team teams in ViewBag.Team)
+                    <select asp-for="PositionId">
+                        @foreach (Team position in ViewBag.Teams)
                         {
-                            <option value="@teams.Id">@teams.Name</option>
+                            <option value="@position.Id">@position.Name</option>
                         }
                     </select>
                 </div>
